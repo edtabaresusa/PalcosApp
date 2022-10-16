@@ -12,18 +12,17 @@ import java.util.Optional;
 public class MessageService {
 
     @Autowired
-    MessageRepository messageRepository;
+    private MessageRepository messageRepository;
 
     public List<Message> getAll(){ return messageRepository.getAll();}
 
     public Optional<Message> getById(Integer id){ return messageRepository.getById(id);}
 
     public Message save(Message message){
-        Optional<Message> optional;
         if (message.getIdMessage() == null){
             return messageRepository.save(message);
         } else {
-            optional = messageRepository.getById(message.getIdMessage());
+            Optional<Message> optional = messageRepository.getById(message.getIdMessage());
             if(optional.isEmpty()){
                 return messageRepository.save(message);
             } else {

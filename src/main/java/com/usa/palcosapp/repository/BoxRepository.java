@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public class BoxRepository {
     @Autowired
-    BoxCrudRepository boxCrudRepository;
+    private BoxCrudRepository boxCrudRepository;
 
     public List<Box> getAll(){
         return (List<Box>) boxCrudRepository.findAll();

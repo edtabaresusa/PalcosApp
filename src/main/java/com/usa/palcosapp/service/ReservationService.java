@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ReservationService {
 
     @Autowired
-    ReservationRepository reservationRepository;
+    private ReservationRepository reservationRepository;
 
     public List<Reservation> getAll(){ return reservationRepository.getAll();}
 

@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ClientService {
 
     @Autowired
-    ClientRepository clientRepository;
+    private ClientRepository clientRepository;
 
     public List<Client> getAll(){return clientRepository.getAll();}
 

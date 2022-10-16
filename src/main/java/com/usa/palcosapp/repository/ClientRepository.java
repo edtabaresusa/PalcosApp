@@ -14,7 +14,7 @@ import java.util.Optional;
 public class ClientRepository {
 
     @Autowired
-    ClientCrudRepository clientCrudRepository;
+    private ClientCrudRepository clientCrudRepository;
 
     public List<Client> getAll(){
         return (List<Client>) clientCrudRepository.findAll();

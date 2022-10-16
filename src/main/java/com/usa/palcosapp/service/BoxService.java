@@ -12,7 +12,7 @@ import java.util.Optional;
 public class BoxService {
 
     @Autowired
-    BoxRepository boxRepository;
+    private BoxRepository boxRepository;
 
     public List<Box> getAll() {
         return boxRepository.getAll();

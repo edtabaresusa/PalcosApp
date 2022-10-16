@@ -13,7 +13,7 @@ import java.util.Optional;
 public class ReservationRepository {
 
     @Autowired
-    ReservationCrudRepository reservationCrudRepository;
+    private ReservationCrudRepository reservationCrudRepository;
 
     public List<Reservation> getAll(){
         return (List<Reservation>) reservationCrudRepository.findAll();

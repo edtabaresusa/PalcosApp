@@ -13,7 +13,7 @@ import java.util.Optional;
 public class MessageRepository {
 
     @Autowired
-    MessageCrudRepository messageCrudRepository;
+    private MessageCrudRepository messageCrudRepository;
 
     public List<Message> getAll(){
         return (List<Message>) messageCrudRepository.findAll();
