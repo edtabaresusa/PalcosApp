@@ -19,11 +19,10 @@ public class ReservationService {
     public Optional<Reservation> getById(Integer id){ return reservationRepository.getById(id);}
 
     public Reservation save(Reservation reservation){
-        Optional<Reservation> optional;
-        if (reservation.getIdReservation()== null){
+        if (reservation.getIdReservation() == null){
             return reservationRepository.save(reservation);
         } else {
-            optional = reservationRepository.getById(reservation.getIdReservation());
+            Optional<Reservation> optional = reservationRepository.getById(reservation.getIdReservation());
             if (optional.isEmpty()){
                 return reservationRepository.save(reservation);
             } else {
@@ -36,14 +35,11 @@ public class ReservationService {
         if (reservation.getIdReservation()!=null){
             Optional<Reservation> optional = reservationRepository.getById(reservation.getIdReservation());
             if (!optional.isEmpty()){
-                if (reservation.getStarDate() != null){
-                    optional.get().setStarDate(reservation.getStarDate());
+                if (reservation.getStartDate() != null){
+                    optional.get().setStartDate(reservation.getStartDate());
                 }
                 if (reservation.getDevolutionDate() != null){
                     optional.get().setDevolutionDate(reservation.getDevolutionDate());
-                }
-                if (reservation.getStatus() != null){
-                    optional.get().setStatus(reservation.getStatus());
                 }
                 reservationRepository.save(optional.get());
                 return optional.get();

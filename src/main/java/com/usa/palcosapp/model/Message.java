@@ -25,7 +25,7 @@ public class Message {
     private Box box;
 
     @ManyToOne
-    @JoinColumn(name = "idClient") //Antes estaba idBox
+    @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"messages", "client", "reservation"})
     private Client client;
 
