@@ -23,11 +23,10 @@ public class BoxService {
     }
 
     public Box save(Box box) {
-        Optional<Box> optional;
         if (box.getId() == null) {
             return boxRepository.save(box);
         } else {
-            optional = boxRepository.getById(box.getId());
+            Optional<Box> optional = boxRepository.getById(box.getId());
             if (optional.isEmpty()) {
                 return boxRepository.save(box);
             } else {
@@ -43,11 +42,11 @@ public class BoxService {
                 if (box.getName() != null) {
                     optional.get().setName(box.getName());
                 }
-                if (box.getCapacity() != null) {
-                    optional.get().setCapacity(box.getCapacity());
-                }
                 if (box.getLocation() != null) {
                     optional.get().setLocation(box.getLocation());
+                }
+                if (box.getCapacity() != null) {
+                    optional.get().setCapacity(box.getCapacity());
                 }
                 if (box.getDescription() != null) {
                     optional.get().setDescription(box.getDescription());
