@@ -17,7 +17,7 @@ public class Box {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
     private String name;
     private String location;
     private Integer capacity;
